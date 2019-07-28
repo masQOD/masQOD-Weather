@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="masQOD_Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="NwL-zD-HOP">
+                                <rect key="frame" x="-50" y="-30" width="475" height="747"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTM-2z-26z">
+                                <rect key="frame" x="98.5" y="40" width="178" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="20f-la-YlE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNV-S5-V7e">
+                                <rect key="frame" x="126" y="81" width="123.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="wpn-gL-1qA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="yzP-ac-WxE">
+                                <rect key="frame" x="127.5" y="112" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="UYo-tq-DxZ"/>
+                                    <constraint firstAttribute="width" constant="120" id="or8-7L-6BS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1H-ZS-G6z">
+                                <rect key="frame" x="75.5" y="236" width="224.5" height="39.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtU-FQ-XEG">
+                                <rect key="frame" x="132" y="279.5" width="111" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EFW-AT-AVt">
+                                <rect key="frame" x="0.0" y="349.5" width="375" height="317.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ForeCastCell" rowHeight="64" id="f6a-1G-XLe" customClass="ForeCastCell" customModule="masQOD_Weather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f6a-1G-XLe" id="iBS-Oz-Slm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAY-di-CDU">
+                                                    <rect key="frame" x="25" y="20" width="75" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPP-8p-iMc">
+                                                    <rect key="frame" x="285" y="17" width="65" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GAY-di-CDU" firstAttribute="centerY" secondItem="iBS-Oz-Slm" secondAttribute="centerY" id="Csg-v9-3Up"/>
+                                                <constraint firstItem="HPP-8p-iMc" firstAttribute="centerY" secondItem="GAY-di-CDU" secondAttribute="centerY" id="f30-9Z-pfc"/>
+                                                <constraint firstItem="GAY-di-CDU" firstAttribute="leading" secondItem="iBS-Oz-Slm" secondAttribute="leadingMargin" constant="10" id="hC9-qv-QV0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HPP-8p-iMc" secondAttribute="trailing" constant="10" id="um1-tQ-Ux5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblDayCell" destination="GAY-di-CDU" id="kDT-PB-QgA"/>
+                                            <outlet property="lblTempCell" destination="HPP-8p-iMc" id="vKV-Xw-0NW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zQ-Nr-P9x" customClass="MaterialButton" customModule="masQOD_Weather" customModuleProvider="target">
+                                <rect key="frame" x="15" y="304" width="100" height="30"/>
+                                <state key="normal" title="Change to ºF"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph9-rZ-o4H" customClass="MaterialButton" customModule="masQOD_Weather" customModuleProvider="target">
+                                <rect key="frame" x="260" y="304" width="100" height="30"/>
+                                <state key="normal" title="Change Location"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rj-BC-Zic" customClass="MaterialButton" customModule="masQOD_Weather" customModuleProvider="target">
+                                <rect key="frame" x="141.5" y="303.5" width="92" height="30"/>
+                                <state key="normal" title="Change to ºC"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NwL-zD-HOP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-50" id="06v-5K-bbO"/>
+                            <constraint firstItem="6rj-BC-Zic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="09E-Fd-Hjt"/>
+                            <constraint firstItem="NwL-zD-HOP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="50" id="5H6-fg-Yiv"/>
+                            <constraint firstItem="ph9-rZ-o4H" firstAttribute="top" secondItem="OtU-FQ-XEG" secondAttribute="bottom" constant="4" id="7gR-a7-UtD"/>
+                            <constraint firstItem="3zQ-Nr-P9x" firstAttribute="width" secondItem="ph9-rZ-o4H" secondAttribute="width" id="8eY-ef-Wgd"/>
+                            <constraint firstItem="NwL-zD-HOP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-50" id="BCX-DB-ZDi"/>
+                            <constraint firstItem="yzP-ac-WxE" firstAttribute="top" secondItem="XNV-S5-V7e" secondAttribute="bottom" constant="6" id="DEI-8V-hMK"/>
+                            <constraint firstItem="e1H-ZS-G6z" firstAttribute="top" secondItem="yzP-ac-WxE" secondAttribute="bottom" constant="4" id="GEk-h6-bqd"/>
+                            <constraint firstItem="ph9-rZ-o4H" firstAttribute="centerY" secondItem="3zQ-Nr-P9x" secondAttribute="centerY" id="GmF-mT-mEv"/>
+                            <constraint firstItem="6rj-BC-Zic" firstAttribute="centerY" secondItem="ph9-rZ-o4H" secondAttribute="centerY" id="HQ8-wF-fYP"/>
+                            <constraint firstItem="ZTM-2z-26z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I6o-JP-ZEg"/>
+                            <constraint firstItem="XNV-S5-V7e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0N-Td-Q27"/>
+                            <constraint firstItem="XNV-S5-V7e" firstAttribute="top" secondItem="ZTM-2z-26z" secondAttribute="bottom" constant="6" id="JJT-Py-de5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ph9-rZ-o4H" secondAttribute="trailing" constant="15" id="Kyg-cO-yYQ"/>
+                            <constraint firstItem="yzP-ac-WxE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MNX-l0-6ol"/>
+                            <constraint firstItem="3zQ-Nr-P9x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="N95-zD-A4a"/>
+                            <constraint firstItem="OtU-FQ-XEG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rsu-rT-Bm0"/>
+                            <constraint firstItem="3zQ-Nr-P9x" firstAttribute="top" secondItem="OtU-FQ-XEG" secondAttribute="bottom" constant="4" id="SRi-vW-uOe"/>
+                            <constraint firstItem="OtU-FQ-XEG" firstAttribute="top" secondItem="e1H-ZS-G6z" secondAttribute="bottom" constant="4" id="Tjm-zR-aPi"/>
+                            <constraint firstItem="3zQ-Nr-P9x" firstAttribute="height" secondItem="ph9-rZ-o4H" secondAttribute="height" id="U08-fH-Ggb"/>
+                            <constraint firstItem="EFW-AT-AVt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y9Y-2V-Abm"/>
+                            <constraint firstItem="EFW-AT-AVt" firstAttribute="top" secondItem="OtU-FQ-XEG" secondAttribute="bottom" constant="50" id="bWI-r5-VNL"/>
+                            <constraint firstItem="6rj-BC-Zic" firstAttribute="centerY" secondItem="3zQ-Nr-P9x" secondAttribute="centerY" id="bmv-ec-PGz"/>
+                            <constraint firstItem="ZTM-2z-26z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eFX-iL-PTX"/>
+                            <constraint firstItem="6rj-BC-Zic" firstAttribute="top" secondItem="OtU-FQ-XEG" secondAttribute="bottom" constant="4" id="fsu-Ug-dec"/>
+                            <constraint firstItem="EFW-AT-AVt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jTu-eo-K4y"/>
+                            <constraint firstItem="EFW-AT-AVt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oGw-j7-bb3"/>
+                            <constraint firstItem="NwL-zD-HOP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="50" id="pBP-Bn-s6S"/>
+                            <constraint firstItem="e1H-ZS-G6z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q9e-EV-koy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bgEffect" destination="NwL-zD-HOP" id="uIE-Fn-WhO"/>
+                        <outlet property="btnChangeCelcius" destination="6rj-BC-Zic" id="ccd-vP-xRS"/>
+                        <outlet property="btnChangeDegree" destination="3zQ-Nr-P9x" id="O2t-9d-Dpk"/>
+                        <outlet property="btnChangeLoc" destination="ph9-rZ-o4H" id="uBN-9W-Ysn"/>
+                        <outlet property="imgSunny" destination="yzP-ac-WxE" id="Ncq-Md-DYJ"/>
+                        <outlet property="lblCondition" destination="XNV-S5-V7e" id="cNc-fR-jmX"/>
+                        <outlet property="lblDate" destination="OtU-FQ-XEG" id="8Fo-vj-u3u"/>
+                        <outlet property="lblLocation" destination="ZTM-2z-26z" id="3bM-VH-Qlj"/>
+                        <outlet property="lblTemp" destination="e1H-ZS-G6z" id="ftA-Dy-Q1G"/>
+                        <outlet property="tableView" destination="EFW-AT-AVt" id="Xwl-If-bfb"/>
+                        <segue destination="qZC-O0-MXO" kind="presentation" identifier="gotoLocation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="NBu-n1-1Mr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="124.58770614692655"/>
+        </scene>
+        <!--Change Location View Controller-->
+        <scene sceneID="7ju-TC-VaZ">
+            <objects>
+                <viewController id="qZC-O0-MXO" customClass="ChangeLocationViewController" customModule="masQOD_Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CIU-Pa-1z7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7BF-ES-paM">
+                                <rect key="frame" x="16" y="229" width="343" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaq-IS-VHz">
+                                        <rect key="frame" x="8" y="6" width="191" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqC-el-8dq">
+                                        <rect key="frame" x="8" y="41" width="138" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location here" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-IQ-ZaI">
+                                        <rect key="frame" x="8" y="71" width="327" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQF-3I-8va">
+                                        <rect key="frame" x="8" y="109" width="327" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="0.060549178990000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTC-VO-K9a" customClass="MaterialButton" customModule="masQOD_Weather" customModuleProvider="target">
+                                        <rect key="frame" x="256" y="159" width="79" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Save"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XS-fs-Wpw" customClass="MaterialButton" customModule="masQOD_Weather" customModuleProvider="target">
+                                        <rect key="frame" x="169" y="159" width="79" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.81568627449999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Fqp-MA-XWK"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnCancel" destination="5XS-fs-Wpw" id="VKv-eX-ivd"/>
+                        <outlet property="btnSave" destination="eTC-VO-K9a" id="H5r-nw-AS9"/>
+                        <outlet property="lblError" destination="eQF-3I-8va" id="sHW-0u-R5k"/>
+                        <outlet property="txtLocation" destination="iOQ-IQ-ZaI" id="gBv-lj-xDs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOj-8z-BpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925.60000000000002" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="414" height="946"/>
+        <image name="cloud" width="186" height="141"/>
+    </resources>
+</document>
