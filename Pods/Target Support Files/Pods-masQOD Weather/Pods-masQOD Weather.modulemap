@@ -1,0 +1,6 @@
+framework module Pods_masQOD_Weather {
+  umbrella header "Pods-masQOD Weather-umbrella.h"
+
+  export *
+  module * { export * }
+}

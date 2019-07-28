@@ -1,0 +1,6 @@
+framework module Pods_masQOD_WeatherTests {
+  umbrella header "Pods-masQOD WeatherTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
