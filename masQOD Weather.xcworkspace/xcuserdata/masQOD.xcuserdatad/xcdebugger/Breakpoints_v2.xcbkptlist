@@ -26,60 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "masQOD Weather/Controller/ViewController.swift"
-            timestampString = "586008231.299439"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "AuthCheckLocation()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "masQOD Weather/Controller/ViewController.swift"
             timestampString = "586008231.299884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "masQOD Weather/Controller/ViewController.swift"
-            timestampString = "586008231.300241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "masQOD Weather/Controller/ViewController.swift"
-            timestampString = "586008231.300576"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "loudly()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -97,38 +49,6 @@
             endingLineNumber = "13"
             landmarkName = "unknown"
             landmarkType = "0">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "globalinit_33_F381D49A4BFCFE6E1647E6B01EDCD42C_func1"
-                  moduleName = "masQOD Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tris/Downloads/masQODWeather/masQOD%20Weather/masQOD%20Weather/Extras/NewExtras.swift"
-                  timestampString = "586008231.892809"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "masQOD_Weather.FORECAST_API_URL.unsafeMutableAddressor : Swift.String"
-                  moduleName = "masQOD Weather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tris/Downloads/masQODWeather/masQOD%20Weather/masQOD%20Weather/Extras/NewExtras.swift"
-                  timestampString = "586008231.89517"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -143,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
-            landmarkName = "downloadForeCastWeather(completed:)"
+            landmarkName = "AuthCheckLocation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

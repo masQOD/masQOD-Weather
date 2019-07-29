@@ -203,6 +203,7 @@
                         <outlet property="btnChangeCelcius" destination="6rj-BC-Zic" id="ccd-vP-xRS"/>
                         <outlet property="btnChangeDegree" destination="3zQ-Nr-P9x" id="O2t-9d-Dpk"/>
                         <outlet property="btnChangeLoc" destination="ph9-rZ-o4H" id="uBN-9W-Ysn"/>
+                        <outlet property="btnDownload" destination="wLx-Rx-fEx" id="aSV-5b-z1w"/>
                         <outlet property="imgSunny" destination="yzP-ac-WxE" id="Ncq-Md-DYJ"/>
                         <outlet property="lblCondition" destination="XNV-S5-V7e" id="cNc-fR-jmX"/>
                         <outlet property="lblDate" destination="OtU-FQ-XEG" id="8Fo-vj-u3u"/>

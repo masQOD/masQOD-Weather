@@ -83,7 +83,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         btnChangeLoc.addTarget(self, action: #selector(btnChangeLocPressed), for: .touchUpInside)
         btnChangeDegree.addTarget(self, action: #selector(btnChangeDegreePressed), for: .touchUpInside)
         btnChangeCelcius.addTarget(self, action: #selector(btnChangeCelciusPressed), for: .touchUpInside)
+        btnDownload.addTarget(self, action: #selector(btnDownloadPressed), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(loudly), name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    @objc func btnDownloadPressed(){
+        self.performSegue(withIdentifier: "gotoDownload", sender: self)
     }
     
     func defaultButton(){
