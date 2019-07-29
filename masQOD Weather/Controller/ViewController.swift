@@ -23,19 +23,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var btnChangeDegree: MaterialButton!
     @IBOutlet weak var btnChangeLoc: MaterialButton!
     @IBOutlet weak var btnChangeCelcius: MaterialButton!
+    @IBOutlet weak var btnDownload: UIButton!
     
     
     let locationManager = CLLocationManager()
     
-//    var currentWeather: CurrentWeather!
     var currentLocation: CLLocation!
     var foreCastWeather: ForeCastWeatherModel!
     var foreCastArray = [ForeCastWeatherModel]()
     var foreCastWeatherF: ForeCastWeatherModelF!
     var foreCastArrayF = [ForeCastWeatherModelF]()
     var btnClick:String = "Celcius"
-//    var latitude:Double = 0
-//    var longitude:Double = 0
     var errorModal: UIAlertController?
     
     var weatherRepo: WeatherRepository{
@@ -79,7 +77,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         callDelegates()
-//        downloadCurrentWeather()
         setTempLocation()
         applyEffect()
         defaultButton()
@@ -100,17 +97,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @objc func loudly(){
-        downloadCurrentWeather()
-        downloadForeCastWeather{
-            print("Data Completed")
+        if foreCastArray.count >= 0{
+            foreCastArray.removeAll()
         }
+        if foreCastArrayF.count >= 0{
+            foreCastArrayF.removeAll()
+        }
+        downloadCurrentWeather()
+        downloadForeCastWeather()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        AuthCheckLocation()
-        downloadForeCastWeather{
-            print("Data Completed")
+        if foreCastArray.count >= 0{
+            foreCastArray.removeAll()
         }
+        if foreCastArrayF.count >= 0{
+            foreCastArrayF.removeAll()
+        }
+        AuthCheckLocation()
+        downloadForeCastWeather()
     }
     
     func AuthCheckLocation(){
@@ -131,20 +136,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
     
-    func downloadForeCastWeather(completed: @escaping DownloadComplete){
-        Alamofire.request(FORECAST_API_URL).responseJSON{(response)in
-            let result = response.result
-            if let dictionary = result.value as? Dictionary<String, AnyObject>{
-                if let list = dictionary["list"] as? [Dictionary<String, AnyObject>]{
-                    self.foreCastArray.removeAll()
-                    for item in list{
+    func downloadForeCastWeather(){
+        startLoading()
+        weatherRepo.getTempWeekly(completion: successForecast, errorCompletion: showError)
+    }
+    
+    func successForecast(result: JSON, repo: Repository){
+        if let dictionary = result.rawValue as? Dictionary<String, AnyObject>{
+            if let list = dictionary["list"] as? [Dictionary<String, AnyObject>]{
+                for item in list{
+                    if btnChangeCelcius.isEnabled == false{
                         let foreCast = ForeCastWeatherModel(weatherDict: item)
                         self.foreCastArray.append(foreCast)
+                    }else{
+                        let foreCast = ForeCastWeatherModelF(weatherDict: item)
+                        self.foreCastArrayF.append(foreCast)
                     }
-                    self.tableView.reloadData()
                 }
+                self.tableView.reloadData()
             }
-            completed()
         }
     }
     
@@ -184,7 +194,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         stopLoading()
         lblLocation.text = locationName
         lblCondition.text = weatherCodition
-        if btnClick == "Celcius"{
+        if btnChangeCelcius.isEnabled == false{
             lblTemp.text = "\(Int(currentTemp))"+" ºC"
         }else{
             lblTemp.text = "\(Int(currentTemp))"+" ºF"
@@ -201,47 +211,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         btnClick = "Fahrenheit"
         defaultButton()
         foreCastArrayF.removeAll()
-        AuthCheckLocationF()
+        downloadCurrentWeather()
+        downloadForeCastWeather()
     }
     
     @objc func btnChangeCelciusPressed(){
         btnClick = "Celcius"
         defaultButton()
         foreCastArray.removeAll()
-//        currentWeather.downloadCurrentWeather {
-//            self.updateViewController()
-//        }
         downloadCurrentWeather()
-        downloadForeCastWeather{
-            print("Data Completed")
-        }
-    }
-    
-    func AuthCheckLocationF(){
-//        currentWeather.downloadCurrentWeather{
-//            self.updateToF()
-//        }
-        downloadCurrentWeather()
-        downloadForeCastWeatherF{
-            print("Data Completed")
-        }
-    }
-    
-    func downloadForeCastWeatherF(completed: @escaping DownloadComplete){
-        Alamofire.request(FORECAST_API_URL).responseJSON{(response)in
-            let result = response.result
-            if let dictionary = result.value as? Dictionary<String, AnyObject>{
-                if let list = dictionary["list"] as? [Dictionary<String, AnyObject>]{
-                    for item in list{
-                        let foreCast = ForeCastWeatherModelF(weatherDict: item)
-                        self.foreCastArrayF.append(foreCast)
-                        print(foreCast)
-                    }
-                    self.tableView.reloadData()
-                }
-            }
-            completed()
-        }
+        downloadForeCastWeather()
     }
     
     func downloadCurrentWeather(){
@@ -265,7 +244,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let downloadTemp = result["main"]["temp"].double
         let celciusTemp = (downloadTemp! - 273.15).rounded(toPlaces: 0)
         let fahrenheitTemp = celciusTemp * (9/5) + 32
-        if btnClick == "Celcius"{
+        if btnChangeCelcius.isEnabled == false{
             self._currentTemp = celciusTemp
             updateViewController()
         }else{
@@ -303,10 +282,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ForeCastCell") as! ForeCastCell
-//        cell.configurattionCell(temp: 10, day: "SABTU")
-        if btnClick == "Celcius"{
+        if btnChangeCelcius.isEnabled == false {
             cell.configurattionCell(foreCastData: foreCastArray[indexPath.row])
-        }else if btnClick == "Fahrenheit"{
+        }else{
             cell.configurattionCellF(foreCastData: foreCastArrayF[indexPath.row])
         }
         

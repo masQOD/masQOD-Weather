@@ -13,6 +13,8 @@ import SwiftyJSON
 class WeatherRepository: Repository{
     let mainWeather = "https://api.openweathermap.org/data/2.5/weather?"
     let apikey = "&appid=c0bc0dfdf007f85ba77f5fc9fb8fa7c0"
+    let forecast = "http://api.openweathermap.org/data/2.5/forecast/daily?"
+    let rowCount = "&cnt=8"
     
     func currentWeather(completion: @escaping jsonCompletion, errorCompletion: @escaping jsonCompletion){
         let url = mainWeather + "lat=\(LocationWeather.sharedInstance.latitude!)&lon=\(LocationWeather.sharedInstance.longitude!)"+apikey
@@ -27,5 +29,12 @@ class WeatherRepository: Repository{
         let defaultHeaders = ["Content-Type":"application/json"]
         
         RequestAsync(url: url,  headers: defaultHeaders, httpMethod: .post, parameters: parameter, completion: completion, errorCompletion: errorCompletion)
+    }
+    
+    func getTempWeekly(completion: @escaping jsonCompletion, errorCompletion: @escaping jsonCompletion){
+        let url = forecast + "lat=\(LocationWeather.sharedInstance.latitude!)&lon=\(LocationWeather.sharedInstance.longitude!)"+rowCount+apikey
+        let defaultHeaders = ["Content-Type":"application/json"]
+        
+        RequestAsync(url: url, headers: defaultHeaders, httpMethod: .get, completion: completion, errorCompletion: errorCompletion)
     }
 }
